@@ -6,7 +6,7 @@ app = FastAPI()
 @app.get("/serve-file", summary="Serve File", description="Serves the 'update_file.zip' as a download.")
 async def serve_file():
     file_path = "update_file.zip"  # adjust file path if needed
-    return FileResponse(path=file_path, filename="file_to_serve.txt", media_type="application/octet-stream")
+    return FileResponse(path=file_path, filename="update_file.zip", media_type="application/octet-stream")
 
 if __name__ == "__main__":
     import uvicorn
