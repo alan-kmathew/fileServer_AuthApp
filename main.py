@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 
-app = FastAPI()
+app = FastAPI(title="File Server for AuthApp")
 
-@app.get("/serve-file", summary="Serve File", description="Serves the 'update_file.zip' as a download.")
-async def serve_file():
+@app.get("/getupdatefile", summary="Get Update File", description="Serves the 'update_file.zip' as a download.")
+async def get_update_file():
     file_path = "update_file.zip"  # adjust file path if needed
     return FileResponse(path=file_path, filename="update_file.zip", media_type="application/octet-stream")
 
